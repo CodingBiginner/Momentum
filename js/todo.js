@@ -22,11 +22,15 @@ const deleteTodo = function (e) {
 
 const paintTodo = function (newTodo) {
   const li = document.createElement("li");
+
   li.id = newTodo.id;
   const span = document.createElement("span");
+
   span.innerText = newTodo.text;
   const button = document.createElement("button");
-  button.innerText = "❌";
+  button.classList.add('nes-btn');
+  button.classList.add('is-error');
+  button.innerText = "X";
   button.addEventListener("click", deleteTodo);
 
   li.appendChild(span);
